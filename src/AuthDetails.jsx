@@ -19,8 +19,10 @@ const AuthDetails = () => {
         }
     }, [])
 
-    const signOutUser =  async () => {
-       await signOut(auth)
+    const signOutUser = () => {
+        signOut(auth).then(() => {
+            console.log('sign out successfully');
+        }).catch(error = console.log(error))
     }
 
     return (
